@@ -1,0 +1,1 @@
+Included list was downloaded from [SecLists/Passwords](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt). Any newline separated plaintext list of passwords will work, though the file is read and loaded into a slice so beware of memory constraints.

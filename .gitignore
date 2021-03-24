@@ -1,0 +1,9 @@
+# MacOS Directory information file
+.DS_Store
+
+# Test binary, generated with `go test -c`
+*.test
+
+# Generated file dirs
+build
+out/*
