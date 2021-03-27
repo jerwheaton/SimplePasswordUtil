@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/spf13/cobra"
 	pw "github.com/jerwheaton/SimplePasswordUtil/pkg/password"
+	"github.com/spf13/cobra"
 )
 
 const (
@@ -26,10 +26,10 @@ var (
 	}
 
 	checkCmd = &cobra.Command{
-		Use:   "check [list path] [password]",
+		Use:   "check [password] [optional: list path]",
 		Short: "",
 		Long:  ``,
-		Args:  cobra.ExactArgs(2),
+		Args:  cobra.RangeArgs(1, 2),
 		Run:   RunCheck,
 	}
 
@@ -43,7 +43,11 @@ var (
 )
 
 func RunCheck(cmd *cobra.Command, args []string) {
-	match, err := pw.Check(args[0], args[1], useBloom)
+	path := ""
+	if len(args) == 2 {
+		path = args[1]
+	}
+	match, err := pw.Check(path, args[0], useBloom)
 	if err != nil {
 		log.Fatal(err)
 	}

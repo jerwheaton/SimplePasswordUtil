@@ -8,7 +8,7 @@ import (
 	"sort"
 	"strings"
 
-	// "github.com/jerwheaton/"
+	"github.com/jerwheaton/SimplePasswordUtil/data"
 	"github.com/willf/bloom"
 )
 
@@ -23,7 +23,8 @@ var badPasswords = []string{}
 
 func Check(listPath, secret string, useBloom bool) (bool, error) {
 	if listPath == "" {
-		fmt.Println("Would like to import password set...")
+		fmt.Println("Would like to import password set...", len(data.TotalSet))
+		return false, nil
 	}
 
 	file, err := os.Open(listPath)

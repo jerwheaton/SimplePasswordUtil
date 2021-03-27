@@ -19,6 +19,7 @@ func writeLine(f *os.File, str string) {
 
 func main() {
 	badPasswords := []string{}
+	testing := map[string]bool{}
 
 	file, err := os.Open("./passwords.txt")
 	if err != nil {
@@ -45,6 +46,15 @@ func main() {
 
 	// foreach entry in file, add to set
 	for i := range badPasswords {
+		if badPasswords[i] == "" {
+			continue
+		}
+
+		if _, ok := testing[badPasswords[i]]; ok {
+			continue
+		}
+
+		testing[badPasswords[i]] = true
 		quoted := []byte("")
 		quoted = strconv.AppendQuote(quoted, badPasswords[i])
 		writeLine(f, fmt.Sprintf("\t%s: true,", string(quoted)))
