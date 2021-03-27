@@ -4,6 +4,9 @@ BUILD_TARGET := build
 BUILD_DIR := build
 NAME := password
 
+run: build
+	./$(BUILD_DIR)/$(NAME)
+
 all: build
 
 build:
