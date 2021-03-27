@@ -1,4 +1,4 @@
-module github.com/therounds/PasswordService
+module github.com/jerwheaton/SimplePasswordUtil
 
 go 1.13
 

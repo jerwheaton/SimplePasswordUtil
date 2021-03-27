@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/spf13/cobra"
-	pw "github.com/therounds/PasswordService/pkg/password"
+	pw "github.com/jerwheaton/SimplePasswordUtil/pkg/password"
 )
 
 const (

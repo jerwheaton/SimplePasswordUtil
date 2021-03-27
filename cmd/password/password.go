@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/therounds/PasswordService/pkg/cmd"
+	"github.com/jerwheaton/SimplePasswordUtil/pkg/cmd"
 )
 
 func main() {
